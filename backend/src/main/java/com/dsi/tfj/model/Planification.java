@@ -1,5 +1,5 @@
 package com.dsi.tfj.model;
-
+import java.time.DayOfWeek;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
