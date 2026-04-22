@@ -1,11 +1,18 @@
-# Build JDK version
-jdk: openjdk17
-
-# Build commands
-build:
-  - cd backend
-  - mvn clean package -DskipTests
-
-# Start command
-start:
-  - java -jar backend/target/tfj-automation-1.0.0.jar
+services:
+  - type: web
+    name: tfj-automation
+    env: java
+    plan: starter
+    region: frankfurt
+    branch: main
+    buildCommand: cd backend && mvn clean package -DskipTests
+    startCommand: java -jar backend/target/tfj-automation-1.0.0.jar
+    envVars:
+      - key: JAVA_VERSION
+        value: 17
+      - key: SPRING_PROFILES_ACTIVE
+        value: render
+    disk:
+      type: pgsqldb
+      name: tfj-db
+      databaseName: tfjdb

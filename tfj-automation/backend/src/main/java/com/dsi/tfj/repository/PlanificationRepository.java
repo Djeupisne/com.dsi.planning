@@ -1,6 +1,5 @@
 package com.dsi.tfj.repository;
 
-import com.dsi.tfj.model.DayOfWeek;
 import com.dsi.tfj.model.Personnel;
 import com.dsi.tfj.model.Planification;
 import com.dsi.tfj.model.TypePlanification;
@@ -8,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
