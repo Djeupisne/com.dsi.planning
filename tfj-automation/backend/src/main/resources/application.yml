@@ -1,0 +1,57 @@
+# Configuration principale de l'application
+spring:
+  application:
+    name: tfj-automation
+  
+  # Configuration de la base de données (PostgreSQL par défaut)
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tfj_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  
+  # Pour Oracle, décommentez et configurez ci-dessous:
+  # datasource:
+  #   url: jdbc:oracle:thin:@//localhost:1521/ORCL
+  #   username: tfj_user
+  #   password: tfj_password
+  #   driver-class-name: oracle.jdbc.OracleDriver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        # Pour Oracle:
+        # dialect: org.hibernate.dialect.OracleDialect
+        format_sql: true
+    open-in-view: false
+  
+  flyway:
+    enabled: false
+
+# Configuration du serveur
+server:
+  port: 8080
+
+# Logs
+logging:
+  level:
+    root: INFO
+    com.dsi.tfj: DEBUG
+    org.springframework.web: INFO
+    org.hibernate.SQL: DEBUG
+
+# JWT Configuration
+jwt:
+  secret: votre-cle-secrete-tres-longue-pour-la-signature-jwt-minimum-256-bits
+  expiration: 86400000 # 24 heures en millisecondes
+  refresh-expiration: 604800000 # 7 jours
+
+# Planification
+planning:
+  workdays: MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY
+  permanence-day: SATURDAY
+  min-participants-per-week: 5

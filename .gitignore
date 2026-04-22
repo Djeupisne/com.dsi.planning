@@ -1,0 +1,49 @@
+```
+# Compiled Java classes
+*.class
+
+# Maven build artifacts
+target/
+
+# Node modules for Angular frontend
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Environment files
+.env
+.env.local
+*.env.*
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# Python related (if any Python tools used in project)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.coverage
+coverage/
+htmlcov/
+
+# Build directories
+dist/
+build/
+```
