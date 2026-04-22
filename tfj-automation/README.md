@@ -1,7 +1,29 @@
 # TFJ Automation - Planification des Travaux de Fin de Journée
 
-## Description
+[![Deploy to Render](https://img.shields.io/badge/Deploy_to-Render-46E3B7?style=for-the-badge&logo=render)](https://render.com)
+[![Java](https://img.shields.io/badge/Java-17-orange?style=for-the-badge&logo=openjdk)](https://openjdk.org)
+[![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.2-brightgreen?style=for-the-badge&logo=spring-boot)](https://spring.io/projects/spring-boot)
+[![Angular](https://img.shields.io/badge/Angular-17-red?style=for-the-badge&logo=angular)](https://angular.io)
+
+## 📖 Description
 Application d'automatisation de la planification des travaux de fin de journée (TFJ) et des permanences pour la DSI.
+
+## 🚀 Déploiement Rapide
+
+### Sur Render.com (Recommandé)
+
+Suivez le guide rapide: **[QUICKSTART_RENDER.md](QUICKSTART_RENDER.md)**
+
+Ou le guide complet: **[DEPLOYMENT_RENDER.md](DEPLOYMENT_RENDER.md)**
+
+```bash
+# Script automatique de configuration
+./setup-render.sh
+```
+
+### En local
+
+Voir section [Installation](#installation) ci-dessous.
 
 ## Stack Technique
 - **Backend**: Spring Boot 3.2, Java 17
