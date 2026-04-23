@@ -1,18 +1,19 @@
-# Configuration pour Render.com
+# Configuration pour Render.com (application-prod.yml)
 spring:
   application:
     name: tfj-automation
-  
-  # Configuration PostgreSQL (Render Database)
+
   datasource:
-    url: ${DATABASE_URL}
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
     driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 10
       minimum-idle: 5
       idle-timeout: 300000
       connection-timeout: 20000
-  
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -23,13 +24,9 @@ spring:
       hibernate:
         format_sql: false
 
-# Configuration du serveur
 server:
-  port: ${PORT:8080}
-  servlet:
-    context-path: /api
+  port: ${SERVER_PORT:8080}
 
-# Logs pour production
 logging:
   level:
     root: INFO
@@ -39,19 +36,16 @@ logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
 
-# JWT Configuration (utilisez des variables d'environnement en production)
 jwt:
   secret: ${JWT_SECRET:render-tfj-secret-key-change-in-production-minimum-256-bits-long}
   expiration: 86400000
   refresh-expiration: 604800000
 
-# Planification
 planning:
   workdays: MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY
   permanence-day: SATURDAY
   min-participants-per-week: 5
 
-# Actuator pour la santé de l'application
 management:
   endpoints:
     web:
