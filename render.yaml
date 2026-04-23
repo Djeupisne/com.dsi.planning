@@ -32,6 +32,13 @@ services:
       - path: /*
         name: X-Frame-Options
         value: SAMEORIGIN
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+    routes:
+      - type: rewrite
+        source: /api/*
+        destination: https://tfj-automation-backend.onrender.com/api/:splat
     envVars:
       - key: NODE_VERSION
         value: 18
