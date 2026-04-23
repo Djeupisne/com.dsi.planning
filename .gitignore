@@ -1,28 +1,60 @@
 ```
-# Compiled and build artifacts
-*.class
-*.o
-*.obj
-*.out
-*.pyc
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+target/
+
+# Python
 __pycache__/
+*.pyc
 *.pyo
 *.pyd
-*.so
-*.dll
-*.exe
-*.a
-*.lib
-*.dylib
-*.jar
-*.war
-*.ear
+.Python
+env/
+venv/
+.venv/
+.ENV
+.env
+.env.*
+.env.local
+
+# Logs
+*.log
+
+# Coverage
+.coverage
+coverage/
+htmlcov/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Gradle
+.gradle/
+build/
+
+# MyPy
+.mypy_cache/
+
+# Pytest
+.pytest_cache/
+
+# Compressed files
 *.zip
-*.tar.gz
-*.tar.bz2
-*.tar.xz
-*.tgz
 *.gz
+*.tar
+*.tgz
 *.bz2
 *.xz
 *.7z
@@ -37,100 +69,8 @@ __pycache__/
 *.Z
 *.lz
 *.lzo
-
-# Dependencies
-node_modules/
-venv/
-.venv/
-.env
-.env.local
-.env.*
-target/
-.gradle/
-.mypy_cache/
-.pytest_cache/
-coverage/
-htmlcov/
-.coverage
-dist/
-build/
-out/
-
-# IDE and editor files
-.vscode/
-.idea/
-*.swp
-*.swo
-*.tmp
-*.log
-.DS_Store
-Thumbs.db
-
-# System files
-*.tmp
-*~
-.DS_Store
-ehthumbs.db
-Icon?
-desktop.ini
-
-# Build and packaging
-*.out
-*.bin
-*.dat
-*.idx
-*.pdb
-*.ilk
-*.exp
-*.map
-*.sym
-*.tlog
-*.log
-*.nib
-*.lproj/
-*.mode1v3
-*.mode2v3
-*.perspectivev3
-*.swiders
-*.xcodeproj/
-*.xcworkspace/
-*.xcworkspacedata
-*.xccheckout
-*.moved-aside
-*.pbxuser
-*.xcuserdatad
-*.xcscmblueprint
-*.xcsettings
-*.superset
-*.csv
-*.jsonl
-*.parquet
-*.db
-*.db-journal
-*.lock
-*.pid
-*.seed
-*.profdata
-*.gcda
-*.gcno
-*.gcov
-*.lcov
-*.lst
-*.s
-*.asm
-*.o.d
-*.lo
-*.la
-*.al
-*.dylib.dSYM/
-*.so.dSYM/
-*.a.dSYM/
-*.exe.dSYM/
-*.out.dSYM/
-*.bin.dSYM/
-*.app.dSYM/
-*.bundle.dSYM/
-*.framework.dSYM/
-*.xctest.dSYM/
-*.dSYM/
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
 ```
