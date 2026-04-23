@@ -8,7 +8,7 @@ import { Planification, PlanningRequest, Absence, JourFerie } from '../models/pl
 })
 export class PlanningService {
   
-  private apiUrl = 'http://localhost:8080/api/planning';
+  private apiUrl = '/api/planning';
 
   constructor(private http: HttpClient) { }
 

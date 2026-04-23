@@ -1,6 +1,7 @@
 services:
+  # Backend
   - type: web
-    name: tfj-automation
+    name: tfj-automation-backend
     env: java
     plan: starter
     region: frankfurt
@@ -11,8 +12,28 @@ services:
       - key: JAVA_VERSION
         value: 17
       - key: SPRING_PROFILES_ACTIVE
-        value: render
+        value: prod
     disk:
       type: pgsqldb
       name: tfj-db
       databaseName: tfjdb
+
+  # Frontend
+  - type: web
+    name: tfj-automation-frontend
+    env: static
+    plan: starter
+    region: frankfurt
+    branch: main
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist/tfj-automation-frontend/browser
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: NODE_ENV
+        value: production
