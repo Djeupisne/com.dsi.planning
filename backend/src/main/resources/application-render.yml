@@ -19,12 +19,11 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: false
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: false
     open-in-view: false
     generate-ddl: true
+    properties:
+      hibernate:
+        format_sql: false
 
 # Configuration du serveur
 server:
