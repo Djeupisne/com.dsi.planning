@@ -99,7 +99,7 @@ export class PlanningListComponent implements OnInit {
   genererPermanence(): void {
     this.planningService.genererPlanningPermanence(this.annee, this.numeroSemaine).subscribe({
       next: (data) => {
-        this.planning = [...this.planning, ...data];
+        this.planning = this.planning ? [...this.planning, ...data] : data;
         this.message = 'Planning Permanence généré';
         this.messageType = 'success';
       },
