@@ -1,59 +1,41 @@
-```yml
-# Environment variables
-.env
-.env.local
-.env.*
-
-# Logs
-*.log
-
-# Dependencies
-node_modules/
+```
+# Compiled and build artifacts
+*.class
+*.o
+*.obj
+*.out
+build/
 target/
 
-# IDE
+# Dependencies
+.gradle/
+node_modules/
+venv/
+.venv/
+__pycache__/
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Editors
 .vscode/
 .idea/
+*.swp
+*.swo
 
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-venv/
-env/
-ENV/
-.venv/
-.env/
-
-# Build artifacts
-build/
-dist/
-*.egg-info/
-.coverage
-htmlcov/
-.mypy_cache/
-.pytest_cache/
-.tox/
-.nyc_output/
+# Coverage reports
 coverage/
+htmlcov/
+.coverage
 
-# OS generated files
+# OS specific
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
-Icon?
-```
-
-Wait, let me reconsider this. The changes are only YAML configuration files (`application-prod.yml` and `application-render.yml`). These are source/config files, not build artifacts, dependencies, or temporary files. Following rule #6, if the changes contain only source or config files and no build artifacts, dependencies, or temp files, I should output an empty .gitignore.
-
-The input shows only `.yml` files being added/deleted, which are configuration files, so no ignores are needed.
-
-```yml
-
 ```
