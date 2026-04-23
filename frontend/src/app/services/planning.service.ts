@@ -8,20 +8,20 @@ import { Planification, PlanningRequest, Absence, JourFerie } from '../models/pl
 })
 export class PlanningService {
   
-  private apiUrl = '/api/planning';
+  private apiUrl = '/api';
 
   constructor(private http: HttpClient) { }
 
   genererPlanningTFJ(annee: number, numeroSemaine: number): Observable<Planification[]> {
-    return this.http.post<Planification[]>(`${this.apiUrl}/generer-tfj/${annee}/${numeroSemaine}`, {});
+    return this.http.post<Planification[]>(`${this.apiUrl}/planning/generer-tfj/${annee}/${numeroSemaine}`, {});
   }
 
   genererPlanningPermanence(annee: number, numeroSemaine: number): Observable<Planification[]> {
-    return this.http.post<Planification[]>(`${this.apiUrl}/generer-permanence/${annee}/${numeroSemaine}`, {});
+    return this.http.post<Planification[]>(`${this.apiUrl}/planning/generer-permanence/${annee}/${numeroSemaine}`, {});
   }
 
   getPlanningSemaine(annee: number, numeroSemaine: number): Observable<Planification[]> {
-    return this.http.get<Planification[]>(`${this.apiUrl}/semaine/${annee}/${numeroSemaine}`);
+    return this.http.get<Planification[]>(`${this.apiUrl}/planning/semaine/${annee}/${numeroSemaine}`);
   }
 
   getPlanningPeriode(dateDebut: Date, dateFin: Date): Observable<Planification[]> {
@@ -29,11 +29,11 @@ export class PlanningService {
       .set('dateDebut', dateDebut.toISOString().split('T')[0])
       .set('dateFin', dateFin.toISOString().split('T')[0]);
     
-    return this.http.get<Planification[]>(`${this.apiUrl}/periode`, { params });
+    return this.http.get<Planification[]>(`${this.apiUrl}/planning/periode`, { params });
   }
 
   reaffecterEnCasDAbsence(absenceId: number): Observable<void> {
-    return this.http.post<void>(`${this.apiUrl}/reaffecter-absence/${absenceId}`, {});
+    return this.http.post<void>(`${this.apiUrl}/planning/reaffecter-absence/${absenceId}`, {});
   }
 
   // Helper pour obtenir le numéro de semaine ISO
